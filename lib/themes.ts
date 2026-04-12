@@ -3,6 +3,10 @@ export type ThemeId =
   | 'midnight-scholar'
   | 'ivory-crimson'
   | 'emerald-institute'
+  | 'cosmic-arc'
+  | 'modern-slate'
+  | 'retro-pop'
+  | 'sunset-diploma'
 
 export interface Theme {
   id: ThemeId
@@ -50,5 +54,41 @@ export const themes: Theme[] = [
     previewBorder: '#1A5C38',
     previewPrimary: '#1A5C38',
     previewAccent: '#C9A84C',
+  },
+  {
+    id: 'cosmic-arc',
+    name: 'Cosmic Arc',
+    description: 'Deep space violet with teal highlights',
+    previewBg: '#121520',
+    previewBorder: '#7C6FD6',
+    previewPrimary: '#A8B4FF',
+    previewAccent: '#5EEAD4',
+  },
+  {
+    id: 'modern-slate',
+    name: 'Modern Slate',
+    description: 'Minimal light gray with crisp ink contrast',
+    previewBg: '#F6F7F8',
+    previewBorder: '#2D3748',
+    previewPrimary: '#1A202C',
+    previewAccent: '#3182CE',
+  },
+  {
+    id: 'retro-pop',
+    name: 'Retro Pop',
+    description: 'Cream canvas with coral and mint energy',
+    previewBg: '#FFFEF5',
+    previewBorder: '#FF6B6B',
+    previewPrimary: '#2D3436',
+    previewAccent: '#00B894',
+  },
+  {
+    id: 'sunset-diploma',
+    name: 'Sunset Diploma',
+    description: 'Warm paper with terracotta and sand tones',
+    previewBg: '#FAF6F3',
+    previewBorder: '#C67B5C',
+    previewPrimary: '#6B4423',
+    previewAccent: '#D4A574',
   },
 ]

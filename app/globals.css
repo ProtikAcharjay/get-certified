@@ -262,6 +262,58 @@ body {
   --cert-body-font: var(--font-dm-sans);
 }
 
+[data-theme='cosmic-arc'] {
+  --cert-bg: #121520;
+  --cert-border: #7c6fd6;
+  --cert-border-2: #4c5568;
+  --cert-primary: #a8b4ff;
+  --cert-accent: #5eead4;
+  --cert-text: #e8eaed;
+  --cert-body-text: #c5cad3;
+  --cert-muted: #8b92a8;
+  --cert-heading-font: var(--font-playfair);
+  --cert-body-font: var(--font-dm-sans);
+}
+
+[data-theme='modern-slate'] {
+  --cert-bg: #f6f7f8;
+  --cert-border: #2d3748;
+  --cert-border-2: #4a5568;
+  --cert-primary: #1a202c;
+  --cert-accent: #3182ce;
+  --cert-text: #1a202c;
+  --cert-body-text: #2d3748;
+  --cert-muted: #718096;
+  --cert-heading-font: var(--font-eb-garamond);
+  --cert-body-font: var(--font-dm-sans);
+}
+
+[data-theme='retro-pop'] {
+  --cert-bg: #fffef5;
+  --cert-border: #ff6b6b;
+  --cert-border-2: #00b894;
+  --cert-primary: #2d3436;
+  --cert-accent: #00b894;
+  --cert-text: #2d3436;
+  --cert-body-text: #2d2d2d;
+  --cert-muted: #636e72;
+  --cert-heading-font: var(--font-cormorant);
+  --cert-body-font: var(--font-dm-sans);
+}
+
+[data-theme='sunset-diploma'] {
+  --cert-bg: #faf6f3;
+  --cert-border: #c67b5c;
+  --cert-border-2: #d4a574;
+  --cert-primary: #6b4423;
+  --cert-accent: #d4a574;
+  --cert-text: #3d2914;
+  --cert-body-text: #5c4033;
+  --cert-muted: #8b7355;
+  --cert-heading-font: var(--font-libre-baskerville);
+  --cert-body-font: var(--font-dm-sans);
+}
+
 /* Boom reveal animation keyframes */
 @keyframes boom-scale {
   0% {
