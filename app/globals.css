@@ -128,3 +128,215 @@
     @apply font-sans;
   }
 }
+
+/* App shell */
+body {
+  font-family: var(--font-dm-sans), sans-serif;
+  background-color: #0d1117;
+  color: #e6edf3;
+}
+
+/* Signature font utilities */
+.font-signature-left {
+  font-family: var(--font-great-vibes), cursive;
+}
+.font-signature-right {
+  font-family: var(--font-pinyon), cursive;
+}
+
+/* Certificate print isolation */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #certificate-preview,
+  #certificate-preview *,
+  #certificate-export,
+  #certificate-export *,
+  #certificate-share,
+  #certificate-share * {
+    visibility: visible;
+  }
+  #certificate-preview,
+  #certificate-export,
+  #certificate-share {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: auto;
+  }
+}
+
+/* Theme CSS variables — applied via data-theme on the certificate wrapper */
+[data-theme='imperial-gold'] {
+  --cert-bg: #faf7f0;
+  --cert-border: #b8860b;
+  --cert-border-2: #c9a84c;
+  --cert-primary: #b8860b;
+  --cert-accent: #1b2a4a;
+  --cert-text: #1b2a4a;
+  --cert-body-text: #2c2c2c;
+  --cert-muted: #7a6a50;
+  --cert-heading-font: var(--font-cormorant);
+  --cert-body-font: var(--font-dm-sans);
+}
+
+[data-theme='midnight-scholar'] {
+  --cert-bg: #0f1923;
+  --cert-border: #8b9db5;
+  --cert-border-2: #4a5568;
+  --cert-primary: #c9d1d9;
+  --cert-accent: #58a6ff;
+  --cert-text: #e6edf3;
+  --cert-body-text: #b0bec5;
+  --cert-muted: #7a8a9a;
+  --cert-heading-font: var(--font-playfair);
+  --cert-body-font: var(--font-dm-sans);
+}
+
+[data-theme='ivory-crimson'] {
+  --cert-bg: #ffffff;
+  --cert-border: #8b0000;
+  --cert-border-2: #c0392b;
+  --cert-primary: #8b0000;
+  --cert-accent: #2c2c2c;
+  --cert-text: #1a1a1a;
+  --cert-body-text: #2c2c2c;
+  --cert-muted: #6b6b6b;
+  --cert-heading-font: var(--font-eb-garamond);
+  --cert-body-font: var(--font-dm-sans);
+}
+
+[data-theme='emerald-institute'] {
+  --cert-bg: #f8fff8;
+  --cert-border: #1a5c38;
+  --cert-border-2: #2e7d52;
+  --cert-primary: #1a5c38;
+  --cert-accent: #c9a84c;
+  --cert-text: #0d2b1a;
+  --cert-body-text: #1c3a28;
+  --cert-muted: #5a7a68;
+  --cert-heading-font: var(--font-libre-baskerville);
+  --cert-body-font: var(--font-dm-sans);
+}
+
+/* Boom reveal animation keyframes */
+@keyframes boom-scale {
+  0% {
+    transform: scale(0.3) rotate(-8deg);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.08) rotate(2deg);
+    opacity: 1;
+  }
+  80% {
+    transform: scale(0.96) rotate(-1deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes boom-badge-pop {
+  0% {
+    transform: scale(0) rotate(-20deg);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1.2) rotate(5deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(-20px) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(80px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes shimmer-slide {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+@keyframes quiz-answer-reveal {
+  0% {
+    transform: translateX(-8px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-slide-up {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse-green {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(34, 197, 94, 0);
+  }
+}
+
+.animate-boom-scale {
+  animation: boom-scale 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+.animate-badge-pop {
+  animation: boom-badge-pop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+.animate-fade-slide-up {
+  animation: fade-slide-up 0.5s ease forwards;
+}
+.animate-studio-enter {
+  animation: fade-slide-up 0.6s ease forwards;
+}
+.animate-quiz-reveal {
+  animation: quiz-answer-reveal 0.3s ease forwards;
+}
+.animate-pulse-green {
+  animation: pulse-green 1.5s ease infinite;
+}
+
+.shimmer-text {
+  background: linear-gradient(
+    90deg,
+    #b8860b 0%,
+    #f0c040 40%,
+    #b8860b 60%,
+    #f0c040 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer-slide 2.5s linear infinite;
+}
