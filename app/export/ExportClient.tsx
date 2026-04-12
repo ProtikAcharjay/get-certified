@@ -90,7 +90,7 @@ export default function ExportClient() {
     <div className="flex min-h-screen flex-col text-app">
       <header className="shrink-0 border-b border-white/[0.09] bg-[#090b0f]/80 px-4 py-5 backdrop-blur-sm sm:px-6">
         <p className="text-[10px] font-medium tracking-[0.2em] text-app-muted uppercase">
-          GetCertified — export
+          Certify Pro Max — export
         </p>
         <h1 className="mt-1 text-base font-semibold tracking-tight text-app">
           Certificate download

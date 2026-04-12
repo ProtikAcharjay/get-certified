@@ -89,11 +89,11 @@ function WatermarkSeal({ svgIdPrefix }: { svgIdPrefix: string }) {
       />
       <text
         fill="var(--cert-border)"
-        fontSize={12}
+        fontSize={9}
         style={{ fontFamily: 'var(--cert-body-font)' }}
       >
         <textPath href={`#${arcT}`} startOffset="50%" textAnchor="middle">
-          GETCERTIFIED
+          CERTIFY · PRO · MAX
         </textPath>
       </text>
       <text
@@ -175,7 +175,7 @@ function CertificateCanvas({
                 }}
                 className="text-[9px] tracking-[0.35em] uppercase"
               >
-                GetCertified Global Institute of Excellence
+                Certify Pro Max · Institute of Instant Prestige
               </p>
               <OrnamentalDivider />
             </div>

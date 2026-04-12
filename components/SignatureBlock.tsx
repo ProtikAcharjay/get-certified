@@ -84,11 +84,11 @@ export default function SignatureBlock({ theme, svgIdPrefix }: Props) {
           />
           <text
             fill="var(--cert-border)"
-            fontSize={6}
+            fontSize={4.8}
             style={{ fontFamily: 'var(--cert-body-font)' }}
           >
             <textPath href={`#${top}`} startOffset="50%" textAnchor="middle">
-              GETCERTIFIED
+              CERTIFY · PRO · MAX
             </textPath>
           </text>
           <text

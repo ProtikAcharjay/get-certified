@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 import ExportClient from './ExportClient'
 
 export const metadata: Metadata = {
-  title: 'Download certificate — GetCertified',
+  title: 'Download certificate — Certify Pro Max',
   robots: { index: false, follow: false },
 }
 

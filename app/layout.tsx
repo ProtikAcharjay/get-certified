@@ -73,15 +73,106 @@ const fontVariables = [
   pinyonScript.variable,
 ].join(' ')
 
+const siteUrl = 'https://certifypromax.vercel.app'
+
+const siteDescription =
+  'Certify Pro Max: no-skills certification in about 60 seconds—a free, funny, shareable certificate for literally anything. No courses, no gatekeeping—name it, tap through, download, flex. Satire; not a real credential. certifypromax.'
+
 export const metadata: Metadata = {
-  title: 'GetCertified — Skills Optional. Certificate Guaranteed.',
-  description:
-    "The world's most honest certification platform. No skills required. No evaluation conducted. Full credentials awarded.",
-  openGraph: {
-    title: 'GetCertified',
-    description: 'Get certified in anything. Prove nothing.',
-    type: 'website',
+  metadataBase: new URL(siteUrl),
+  title: {
+    default:
+      'Certify Pro Max — No-Skills Certificate in ~60 Seconds (Free) | certifypromax',
+    template: '%s | Certify Pro Max',
   },
+  description: siteDescription,
+  keywords: [
+    'certifypromax',
+    'Certify Pro Max',
+    'no skills certification',
+    'no skill certificate',
+    'free certificate online',
+    'funny certificate',
+    'fake certificate generator',
+    'instant certificate',
+    'certificate in 60 seconds',
+    'shareable certificate',
+    'joke certification',
+    'satirical certificate',
+    'Gen Z certificate',
+    'certificate for anything',
+    'no exam certification',
+    'download certificate PNG',
+  ],
+  authors: [{ name: 'Certify Pro Max' }],
+  openGraph: {
+    title:
+      'Certify Pro Max — No-skills certification in a minute. Free. Shareable.',
+    description: siteDescription,
+    type: 'website',
+    siteName: 'Certify Pro Max',
+    url: siteUrl,
+    locale: 'en_US',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Certify Pro Max — no skills? still pro max. ~60 sec.',
+    description: siteDescription,
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: '/',
+  },
+}
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: 'Certify Pro Max',
+  alternateName: 'certifypromax',
+  url: siteUrl,
+  description: siteDescription,
+  applicationCategory: 'EntertainmentApplication',
+  operatingSystem: 'Any',
+  offers: {
+    '@type': 'Offer',
+    price: '0',
+    priceCurrency: 'USD',
+  },
+}
+
+const faqStructuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is a no-skills certification?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Certify Pro Max (certifypromax) is a satirical, for-fun flow: you pick a title, breeze through a playful quiz, and get a downloadable, shareable certificate in about a minute. It is not a real professional or academic credential.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do I need any skills or training?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'No. That is the point. The experience is designed as a humorous “no skills certification” you can finish quickly and share with friends.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How long does it take to get a certificate?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Most people complete the whole flow in roughly 60 seconds to a few minutes, depending on how fast you type and tap.',
+      },
+    },
+  ],
 }
 
 export default function RootLayout({
@@ -91,7 +182,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={fontVariables}>
-      <body className="min-h-full flex flex-col antialiased">{children}</body>
+      <body className="min-h-full flex flex-col antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(structuredData),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(faqStructuredData),
+          }}
+        />
+        {children}
+      </body>
     </html>
   )
 }

@@ -58,8 +58,10 @@ export default function QualificationQuiz({
   return (
     <div className="flex flex-1 flex-col items-center justify-center px-4 py-10 md:px-6">
       <div className="surface-card w-full max-w-[640px] p-8">
-        <p className="mb-6 text-center text-[11px] text-app-muted">
-          Qualification Assessment — {recipientName}
+        <p className="mb-6 text-center text-[11px] leading-relaxed text-app-muted">
+          Speed-run &quot;qualification&quot; — hi{' '}
+          {recipientName.trim() || 'future legend'}. Tap through; your no-skills
+          certification is almost ready to flex in the group chat.
         </p>
 
         {!quizRevealed && (

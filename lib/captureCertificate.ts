@@ -81,7 +81,7 @@ export async function rasterizeCertificate(
   const styleBackup: Array<[string, string]> = []
   for (const [k, v] of varPairs) {
     styleBackup.push([k, element.style.getPropertyValue(k)])
-    element.style.setProperty(k, v)
+    element.style.setProperty(k, v)   
   }
 
   const prevBgColor = element.style.backgroundColor
@@ -164,5 +164,5 @@ export function certificateDownloadFilename(recipientName: string) {
       .replace(/[^\w\s-]/g, '')
       .replace(/\s+/g, '-')
       .slice(0, 80) || 'certificate'
-  return `getcertified-${slug}.png`
+  return `certifypromax-${slug}.png`
 }

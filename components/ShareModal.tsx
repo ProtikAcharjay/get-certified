@@ -187,7 +187,8 @@ export default function ShareModal({
         <DialogHeader>
           <DialogTitle className="text-app">Share Your Certificate</DialogTitle>
           <DialogDescription className="text-app-secondary">
-            Show the world what you haven&apos;t achieved.
+            Drop your link anywhere—IG story, GC, LinkedIn if you&apos;re brave.
+            Free viral-ish no-skills certification energy.
           </DialogDescription>
         </DialogHeader>
 

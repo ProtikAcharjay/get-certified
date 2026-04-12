@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 import ViewClient from './ViewClient'
 
 export const metadata: Metadata = {
-  title: 'Certificate — GetCertified',
+  title: 'Certificate — Certify Pro Max',
   robots: { index: false, follow: false },
 }
 

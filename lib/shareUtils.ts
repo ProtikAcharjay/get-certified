@@ -19,8 +19,9 @@ export function buildShareUrl(params: ShareParams): string {
   return `${window.location.origin}/view?${q.toString()}`
 }
 
-export function buildShareText(_name: string, achievement: string): string {
-  return `Thrilled to announce I am now officially certified in "${achievement}" by the GetCertified Global Institute of Excellence. Hard work pays off. \uD83C\uDF93 #Certified #ProfessionalDevelopment #GetCertified`
+export function buildShareText(name: string, achievement: string): string {
+  const tag = name.trim() ? `${name.trim()} ` : ''
+  return `${tag}just unlocked a no-skills certification in "${achievement}" in like 60 sec on Certify Pro Max (certifypromax). zero courses. zero talent tests. pro max bragging rights. send this to someone who needs the ego boost \uD83D\uDE2D \uD83C\uDF93 #CertifyProMax #certifypromax #NoSkillsCert`
 }
 
 export function getShareLinks(url: string, text: string) {
