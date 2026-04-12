@@ -183,18 +183,18 @@ export default function ShareModal({
         if (!open) onClose()
       }}
     >
-      <DialogContent className="max-h-[90vh] max-w-md overflow-y-auto border-white/10 bg-[#161b22] text-white sm:max-w-md">
+      <DialogContent className="max-h-[90vh] max-w-md overflow-y-auto border-white/[0.1] bg-[#12151c] text-app sm:max-w-md">
         <DialogHeader>
-          <DialogTitle className="text-white">Share Your Certificate</DialogTitle>
-          <DialogDescription className="text-white/55">
+          <DialogTitle className="text-app">Share Your Certificate</DialogTitle>
+          <DialogDescription className="text-app-secondary">
             Show the world what you haven&apos;t achieved.
           </DialogDescription>
         </DialogHeader>
 
         <div className="flex justify-center">
-          <div className="relative w-[240px] overflow-hidden rounded-lg border border-white/10 bg-[#0d1117]">
+          <div className="relative w-[240px] overflow-hidden rounded-lg border border-white/[0.1] bg-[#0a0c10]">
             {!thumbnail ? (
-              <div className="aspect-[1.414/1] w-full animate-pulse bg-white/5" />
+              <div className="aspect-[1.414/1] w-full animate-pulse bg-white/[0.06]" />
             ) : (
               // eslint-disable-next-line @next/next/no-img-element
               <img
@@ -220,7 +220,7 @@ export default function ShareModal({
                 <span className="flex h-6 w-6 items-center justify-center">
                   {icon}
                 </span>
-                <span className="text-[10px] font-medium text-white/90">
+                <span className="text-[10px] font-medium text-app">
                   {st.label}
                 </span>
               </button>
@@ -233,7 +233,7 @@ export default function ShareModal({
             type="button"
             disabled={!shareUrl}
             onClick={handleCopy}
-            className="flex flex-1 items-center justify-center gap-2 rounded-lg border border-white/15 py-2.5 text-sm text-white/80 hover:bg-white/5 disabled:cursor-not-allowed disabled:opacity-40"
+            className="flex flex-1 items-center justify-center gap-2 rounded-lg border border-white/[0.12] py-2.5 text-sm text-app-secondary transition hover:border-white/[0.18] hover:bg-white/[0.05] hover:text-app disabled:cursor-not-allowed disabled:opacity-40"
           >
             {copied ? (
               <>
@@ -250,14 +250,14 @@ export default function ShareModal({
             <button
               type="button"
               onClick={handleNativeShare}
-              className="flex flex-1 items-center justify-center gap-2 rounded-lg border border-white/15 py-2.5 text-sm text-white/80 hover:bg-white/5"
+              className="flex flex-1 items-center justify-center gap-2 rounded-lg border border-white/[0.12] py-2.5 text-sm text-app-secondary transition hover:border-white/[0.18] hover:bg-white/[0.05] hover:text-app"
             >
               📱 Native Share
             </button>
           )}
         </div>
 
-        <p className="text-center text-[10px] text-white/35">
+        <p className="text-center text-[10px] text-app-faint">
           Sharing this certificate confirms you are, in fact, certified.
         </p>
       </DialogContent>

@@ -16,7 +16,7 @@ export default function ThemeSelector({
 }: Props) {
   return (
     <div>
-      <h3 className="mb-3 text-[10px] tracking-[0.25em] text-white/50 uppercase">
+      <h3 className="mb-3 text-[10px] font-medium tracking-[0.22em] text-app-muted uppercase">
         Certificate Theme
       </h3>
       <div className="grid grid-cols-2 gap-3">
@@ -27,10 +27,10 @@ export default function ThemeSelector({
               key={theme.id}
               type="button"
               onClick={() => onSelect(theme.id)}
-              className={`relative rounded-lg border border-white/10 p-3 text-left transition-all duration-200 ${
+              className={`relative rounded-lg border border-white/[0.08] p-3 text-left transition-all duration-200 ${
                 selected
-                  ? 'ring-2 ring-offset-1 ring-offset-[#161b22]'
-                  : 'hover:bg-white/5'
+                  ? 'ring-2 ring-offset-1 ring-offset-[#101218]'
+                  : 'hover:bg-white/[0.04]'
               }`}
               style={
                 selected
@@ -70,10 +70,10 @@ export default function ThemeSelector({
                   }}
                 />
               </div>
-              <p className="text-[13px] font-semibold text-white">
+              <p className="text-[13px] font-semibold text-app">
                 {theme.name}
               </p>
-              <p className="mt-0.5 text-[11px] text-white/50">
+              <p className="mt-0.5 text-[11px] text-app-muted">
                 {theme.description}
               </p>
             </button>

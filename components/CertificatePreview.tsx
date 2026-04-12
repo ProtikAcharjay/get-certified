@@ -277,7 +277,7 @@ function CertificateCanvas({
                     }}
                     className="mt-0.5 text-[10px] italic"
                   >
-                    The Edge of the Observable Universe
+                    The End of the World
                   </p>
                 </div>
               </div>

@@ -49,16 +49,16 @@ function HomeInner() {
   ])
 
   return (
-    <div className="flex min-h-screen flex-col bg-[#0d1117]">
-      <header className="flex shrink-0 flex-col gap-3 border-b border-white/10 px-6 py-4 sm:flex-row sm:items-end sm:justify-between">
+    <div className="flex min-h-screen flex-col">
+      <header className="flex shrink-0 flex-col gap-3 border-b border-white/[0.09] bg-[#090b0f]/75 px-6 py-5 backdrop-blur-xl sm:flex-row sm:items-end sm:justify-between">
         <div className="min-w-0 text-left">
-          <p className="text-[10px] tracking-[0.2em] text-white/35 uppercase">
+          <p className="text-[10px] font-medium tracking-[0.22em] text-app-muted uppercase">
             Global Institute of Excellence
           </p>
-          <h1 className="text-lg font-semibold tracking-wide text-white">
+          <h1 className="mt-1 text-xl font-semibold tracking-tight text-app">
             GetCertified
           </h1>
-          <p className="mt-0.5 text-xs tracking-widest text-white/40 uppercase">
+          <p className="mt-1 text-[11px] tracking-[0.18em] text-app-secondary uppercase">
             Skills Optional. Certificate Guaranteed.
           </p>
         </div>
@@ -96,8 +96,8 @@ function HomeInner() {
         {cert.stage === 'studio' && <CertificateStudio cert={cert} />}
       </main>
 
-      <footer className="shrink-0 border-t border-white/10 px-6 py-3 text-center">
-        <p className="mx-auto max-w-3xl text-xs leading-relaxed text-white/20">
+      <footer className="shrink-0 border-t border-white/[0.09] bg-[#090b0f]/40 px-6 py-4 text-center backdrop-blur-sm">
+        <p className="mx-auto max-w-3xl text-xs leading-relaxed text-app-faint">
           GetCertified is a satirical platform. No qualifications are assessed.
           No skills are verified. No responsibility is assumed. Certificates
           produced herein are works of creative expression and carry no
@@ -121,7 +121,11 @@ function HomeInner() {
 
 export default function Home() {
   return (
-    <Suspense fallback={<div className="min-h-screen bg-[#0d1117]" />}>
+    <Suspense
+      fallback={
+        <div className="min-h-screen bg-[#090b0f]" aria-hidden />
+      }
+    >
       <HomeInner />
     </Suspense>
   )

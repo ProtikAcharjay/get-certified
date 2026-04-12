@@ -113,7 +113,7 @@ export default function CertificateBoomReveal({
         )}
         {showName && (
           <p
-            className="mt-5 text-white italic"
+            className="mt-5 text-zinc-200 italic"
             style={{
               fontFamily: 'var(--font-great-vibes), cursive',
               fontSize: 'clamp(1.2rem, 3vw, 1.8rem)',
@@ -124,7 +124,7 @@ export default function CertificateBoomReveal({
         )}
         {showAchievement && (
           <p
-            className="mt-2 tracking-wide text-[#C9A84C]"
+            className="mt-2 tracking-wide text-[#c4b896]"
             style={{
               fontSize: 'clamp(0.9rem, 2vw, 1.1rem)',
             }}

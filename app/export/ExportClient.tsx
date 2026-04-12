@@ -87,15 +87,15 @@ export default function ExportClient() {
   }, [searchParamsKey, router, name])
 
   return (
-    <div className="flex min-h-screen flex-col bg-[#0d1117] text-white">
-      <header className="shrink-0 border-b border-white/10 px-4 py-4 sm:px-6">
-        <p className="text-[10px] tracking-[0.2em] text-white/35 uppercase">
+    <div className="flex min-h-screen flex-col text-app">
+      <header className="shrink-0 border-b border-white/[0.09] bg-[#090b0f]/80 px-4 py-5 backdrop-blur-sm sm:px-6">
+        <p className="text-[10px] font-medium tracking-[0.2em] text-app-muted uppercase">
           GetCertified — export
         </p>
-        <h1 className="mt-1 text-base font-semibold text-white">
+        <h1 className="mt-1 text-base font-semibold tracking-tight text-app">
           Certificate download
         </h1>
-        <p className="mt-0.5 text-xs text-white/45">
+        <p className="mt-1 text-xs text-app-secondary">
           Fixed layout (1000px wide). Use the buttons below if the file did not
           save automatically.
         </p>
@@ -121,7 +121,7 @@ export default function ExportClient() {
             type="button"
             disabled={pngLoading}
             onClick={runDownload}
-            className="flex flex-1 items-center justify-center gap-2 rounded-lg bg-white py-2.5 font-semibold text-[#0d1117] hover:bg-white/90 disabled:cursor-not-allowed disabled:opacity-40"
+            className="flex flex-1 items-center justify-center gap-2 rounded-lg bg-[#e8eaed] py-2.5 font-semibold text-[#0a0c10] shadow-sm transition hover:bg-white disabled:cursor-not-allowed disabled:opacity-40"
           >
             {pngLoading ? (
               <>
@@ -135,14 +135,14 @@ export default function ExportClient() {
           <button
             type="button"
             onClick={() => window.print()}
-            className="flex-1 rounded-lg border border-white/20 py-2.5 text-white/80 hover:bg-white/5"
+            className="flex-1 rounded-lg border border-white/[0.12] py-2.5 text-app-secondary transition hover:border-white/[0.18] hover:bg-white/[0.05] hover:text-app"
           >
             Print / Save as PDF
           </button>
         </div>
 
         {searchParams.get('download') === '1' && autoDownloadDone && (
-          <p className="mt-4 text-center text-xs text-[#22c55e]">
+          <p className="mt-4 text-center text-xs text-emerald-400/95">
             Download should have started. You can close this tab or use the
             buttons above.
           </p>
@@ -150,7 +150,7 @@ export default function ExportClient() {
 
         <Link
           href={studioHref}
-          className="mt-6 text-sm text-white/45 underline decoration-white/20 underline-offset-4 hover:text-white/70"
+          className="mt-6 text-sm text-app-muted underline decoration-white/15 underline-offset-4 transition hover:text-app-secondary"
         >
           ← Back to studio
         </Link>

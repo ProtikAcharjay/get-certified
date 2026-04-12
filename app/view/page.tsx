@@ -11,7 +11,7 @@ export default function ViewPage() {
   return (
     <Suspense
       fallback={
-        <div className="flex min-h-screen items-center justify-center bg-[#0d1117] text-sm text-white/40">
+        <div className="flex min-h-screen items-center justify-center text-sm text-app-muted">
           Loading certificate…
         </div>
       }

@@ -21,7 +21,7 @@ export default function ViewClient() {
     })
 
   return (
-    <div className="flex min-h-screen flex-col bg-[#0d1117]">
+    <div className="flex min-h-screen flex-col">
       <div
         className="pointer-events-none fixed top-0 left-[-9999px] z-0 w-[1000px] shrink-0"
         aria-hidden

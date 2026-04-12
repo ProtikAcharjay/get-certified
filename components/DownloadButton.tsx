@@ -28,9 +28,9 @@ interface Props {
 }
 
 const btnPrimary =
-  'flex w-full items-center justify-center gap-2 rounded-lg bg-white py-2.5 font-semibold text-[#0d1117] hover:bg-white/90 disabled:cursor-not-allowed disabled:opacity-50'
+  'flex w-full items-center justify-center gap-2 rounded-lg bg-[#e8eaed] py-2.5 font-semibold text-[#0a0c10] shadow-sm transition hover:bg-white disabled:cursor-not-allowed disabled:opacity-50'
 const btnSecondary =
-  'flex w-full items-center justify-center rounded-lg border border-white/20 py-2.5 text-white/60 hover:bg-white/5'
+  'flex w-full items-center justify-center rounded-lg border border-white/[0.12] py-2.5 text-app-secondary transition hover:border-white/[0.18] hover:bg-white/[0.05] hover:text-app'
 
 export default function DownloadButton({
   recipientName,
@@ -118,7 +118,7 @@ export default function DownloadButton({
           </a>
         ))}
       {showHelperText && (
-        <p className="text-center text-[10px] leading-snug text-white/35">
+        <p className="text-center text-[10px] leading-snug text-app-faint">
           PNG saves in place from the same layout as the preview. Print still opens
           the export page if you need a PDF.
         </p>

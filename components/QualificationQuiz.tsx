@@ -57,8 +57,8 @@ export default function QualificationQuiz({
 
   return (
     <div className="flex flex-1 flex-col items-center justify-center px-4 py-10 md:px-6">
-      <div className="w-full max-w-[640px] rounded-2xl border border-white/10 bg-[#161b22] p-8">
-        <p className="mb-6 text-center text-[11px] text-white/35">
+      <div className="surface-card w-full max-w-[640px] p-8">
+        <p className="mb-6 text-center text-[11px] text-app-muted">
           Qualification Assessment — {recipientName}
         </p>
 
@@ -74,10 +74,10 @@ export default function QualificationQuiz({
                       <div
                         className={`flex h-9 w-9 items-center justify-center rounded-full border text-[11px] font-semibold transition-all duration-200 ${
                           done
-                            ? 'border-[#22c55e] bg-[#22c55e]/15 text-[#22c55e]'
+                            ? 'border-emerald-600/80 bg-emerald-500/15 text-emerald-400'
                             : active
-                              ? 'border-white/40 bg-white/10 text-white'
-                              : 'border-white/15 bg-white/[0.03] text-white/40'
+                              ? 'border-white/25 bg-white/[0.08] text-app'
+                              : 'border-white/[0.1] bg-white/[0.03] text-app-faint'
                         }`}
                       >
                         {done ? (
@@ -86,7 +86,7 @@ export default function QualificationQuiz({
                           idx + 1
                         )}
                       </div>
-                      <span className="hidden text-[9px] tracking-wider text-white/30 uppercase sm:inline">
+                      <span className="hidden text-[9px] tracking-wider text-app-faint uppercase sm:inline">
                         Step {idx + 1}
                       </span>
                     </div>
@@ -94,8 +94,8 @@ export default function QualificationQuiz({
                       <div
                         className={`mx-1 h-px flex-1 ${
                           quizAnswers[quizQuestions[idx].id]
-                            ? 'bg-[#22c55e]/50'
-                            : 'bg-white/10'
+                            ? 'bg-emerald-500/40'
+                            : 'bg-white/[0.08]'
                         }`}
                         aria-hidden
                       />
@@ -108,14 +108,14 @@ export default function QualificationQuiz({
             {!showSeeResults && currentQuestion && (
               <div className="space-y-5">
                 <div className="text-center">
-                  <p className="text-[11px] font-medium tracking-[0.2em] text-[#C9A84C] uppercase">
+                  <p className="text-[11px] font-medium tracking-[0.2em] text-[#b8a882] uppercase">
                     Q.{String(currentQuestion.questionNumber).padStart(2, '0')}
                   </p>
-                  <p className="mt-1 text-[10px] tracking-[0.2em] text-white/40 uppercase">
+                  <p className="mt-1 text-[10px] tracking-[0.2em] text-app-muted uppercase">
                     {currentQuestion.category}
                   </p>
                   <p
-                    className="mt-4 text-[20px] leading-snug font-medium text-white md:text-[22px]"
+                    className="mt-4 text-[20px] leading-snug font-medium text-app md:text-[22px]"
                     style={{ fontFamily: 'var(--font-playfair), serif' }}
                   >
                     {currentQuestion.question}
@@ -135,14 +135,14 @@ export default function QualificationQuiz({
                         }
                         className={`flex w-full cursor-pointer items-start gap-3 rounded-lg border px-5 py-3.5 text-left transition-all duration-200 ${
                           pressed || selected
-                            ? 'border-white/50 bg-white/10'
-                            : 'border-white/15 bg-white/[0.03] hover:border-white/30 hover:bg-white/[0.08]'
+                            ? 'border-white/30 bg-white/[0.1]'
+                            : 'border-white/[0.1] bg-white/[0.03] hover:border-white/20 hover:bg-white/[0.06]'
                         }`}
                       >
-                        <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded bg-white/10 text-xs text-white/60">
+                        <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded bg-white/[0.08] text-xs text-app-secondary">
                           {letter}
                         </span>
-                        <span className="text-sm text-white/90">
+                        <span className="text-sm text-app">
                           {opt.text}
                         </span>
                       </button>
@@ -154,14 +154,14 @@ export default function QualificationQuiz({
 
             {showSeeResults && !quizRevealed && (
               <div className="flex flex-col items-center gap-4 py-4 text-center">
-                <p className="text-sm text-white/60">
+                <p className="text-sm text-app-secondary">
                   Your responses have been recorded.
                 </p>
                 <Button
                   type="button"
                   onClick={onReveal}
                   disabled={!isQuizComplete}
-                  className="rounded-lg bg-white px-8 py-3 font-semibold text-[#0d1117] hover:bg-white/90"
+                  className="rounded-lg bg-[#e8eaed] px-8 py-3 font-semibold text-[#0a0c10] shadow-sm hover:bg-white"
                 >
                   See My Results
                 </Button>
@@ -174,24 +174,24 @@ export default function QualificationQuiz({
           <div className="space-y-8">
             <div className="flex flex-col items-center text-center">
               <CheckCircle2
-                className="animate-badge-pop h-14 w-14 text-[#22c55e]"
+                className="animate-badge-pop h-14 w-14 text-emerald-400"
                 strokeWidth={1.75}
               />
               <h2
-                className="mt-5 text-2xl font-semibold text-white md:text-3xl"
+                className="mt-5 text-2xl font-semibold text-app md:text-3xl"
                 style={{ fontFamily: 'var(--font-playfair), serif' }}
               >
                 {quizResultMessage.headline}
               </h2>
-              <p className="mt-2 max-w-md text-sm text-white/50">
+              <p className="mt-2 max-w-md text-sm text-app-secondary">
                 {quizResultMessage.subheadline}
               </p>
               <div
-                className="animate-pulse-green mt-6 rounded-full border-2 border-[#22c55e] bg-[#22c55e]/10 px-5 py-2 text-sm font-bold text-[#22c55e]"
+                className="animate-pulse-green mt-6 rounded-full border border-emerald-500/50 bg-emerald-500/10 px-5 py-2 text-sm font-semibold text-emerald-300"
               >
                 {quizResultMessage.scoreLabel} — {quizResultMessage.scoreSubtext}
               </div>
-              <p className="mt-6 max-w-xl text-sm leading-relaxed text-white/70">
+              <p className="mt-6 max-w-xl text-sm leading-relaxed text-app-secondary">
                 {quizResultMessage.body}
               </p>
             </div>
@@ -204,7 +204,7 @@ export default function QualificationQuiz({
                 return (
                   <div
                     key={q.id}
-                    className="animate-quiz-reveal rounded-lg border border-white/10 bg-white/[0.03] p-4"
+                    className="animate-quiz-reveal rounded-lg border border-white/[0.08] bg-white/[0.03] p-4"
                     style={{
                       animationDelay: `${120 + qi * 90}ms`,
                       animationFillMode: 'forwards',
@@ -212,18 +212,18 @@ export default function QualificationQuiz({
                   >
                     <div className="flex items-start justify-between gap-3">
                       <div>
-                        <p className="text-[10px] tracking-[0.2em] text-white/40 uppercase">
+                        <p className="text-[10px] tracking-[0.2em] text-app-muted uppercase">
                           Q.{String(q.questionNumber).padStart(2, '0')} ·{' '}
                           {q.category}
                         </p>
-                        <p className="mt-2 text-sm font-medium text-[#22c55e]">
+                        <p className="mt-2 text-sm font-medium text-emerald-400">
                           {opt?.text}
                         </p>
-                        <p className="mt-2 text-xs text-white/50 italic">
+                        <p className="mt-2 text-xs text-app-secondary italic">
                           {feedback}
                         </p>
                       </div>
-                      <div className="flex shrink-0 flex-col items-end gap-0.5 text-[#22c55e]">
+                      <div className="flex shrink-0 flex-col items-end gap-0.5 text-emerald-400">
                         <Check className="h-5 w-5" strokeWidth={2.5} />
                         <span className="text-[10px] font-semibold tracking-wide">
                           Correct
@@ -235,13 +235,13 @@ export default function QualificationQuiz({
               })}
             </div>
 
-            <p className="text-center text-[11px] text-white/25 italic">
+            <p className="text-center text-[11px] text-app-faint italic">
               {quizResultMessage.finePrint}
             </p>
             <Button
               type="button"
               onClick={onClaim}
-              className="w-full rounded-lg bg-white py-3 font-semibold text-[#0d1117] hover:bg-white/90"
+              className="h-11 w-full rounded-lg bg-[#e8eaed] py-3 font-semibold text-[#0a0c10] shadow-sm hover:bg-white"
             >
               {quizResultMessage.ctaButton}
             </Button>
